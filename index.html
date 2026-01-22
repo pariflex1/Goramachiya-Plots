@@ -2,21 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Auto Download PDF</title>
+<title>Downloading PDF...</title>
 </head>
 <body>
 
 <script>
-window.onload = function () {
+(function () {
   const pdfUrl = "https://raw.githubusercontent.com/pariflex1/Goramachiya-Plots/c086159d348b0c7b45ede9a7b01dd4712e775871/Maa%20Peetanbra%20Goramachiya.pdf";
 
-  const link = document.createElement("a");
-  link.href = pdfUrl;
-  link.download = "Maa_Peetanbra_Goramachiya.pdf"; // Optional: custom filename
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
+  fetch(pdfUrl)
+    .then(response => response.blob())
+    .then(blob => {
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Maa_Peetanbra_Goramachiya.pdf";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    });
+})();
 </script>
 
 </body>

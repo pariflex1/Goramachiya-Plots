@@ -4,16 +4,15 @@
 <meta charset="UTF-8">
 <title>Auto Download PDF</title>
 </head>
-
 <body>
 
 <script>
 window.onload = function () {
-  const pdfUrl = "https://github.com/pariflex1/Goramachiya-Plots/blob/c086159d348b0c7b45ede9a7b01dd4712e775871/Maa%20Peetanbra%20Goramachiya.pdf";
+  const pdfUrl = "https://raw.githubusercontent.com/pariflex1/Goramachiya-Plots/c086159d348b0c7b45ede9a7b01dd4712e775871/Maa%20Peetanbra%20Goramachiya.pdf";
 
   const link = document.createElement("a");
   link.href = pdfUrl;
-  link.download = "Maa_Peetanbra_Goramachiya.pdf"; // optional custom name
+  link.download = "Maa_Peetanbra_Goramachiya.pdf"; // Optional: custom filename
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -22,4 +21,3 @@ window.onload = function () {
 
 </body>
 </html>
-

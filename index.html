@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Auto Download PDF</title>
+</head>
+
+<body>
+
+<script>
+window.onload = function () {
+  const pdfUrl = "https://raw.githubusercontent.com/pariflex1/Goramachiya-Plots/eff6e7966d5b750884cbc98b6c27fceaa87d4ba8/Maa%20Peetanbra%20Goramachiya.pdf";
+
+  const link = document.createElement("a");
+  link.href = pdfUrl;
+  link.download = "Maa_Peetanbra_Goramachiya.pdf"; // optional custom name
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+</script>
+
+</body>
+</html>
 
